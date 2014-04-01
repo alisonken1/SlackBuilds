@@ -1,0 +1,10 @@
+Tryton is a complete ERP. The main features are accounting
+(analytic and financial), stock management, sales and purchases management,
+POS, etc. Technical features include a distributed server, flexible workflows,
+an object database, a dynamic GUI, customizable reports, and SOAP and XML-RPC
+interfaces.
+
+This is the gtk client for Tryton.
+
+If you want to integrate Google Calendar, then install
+GooCalendar (http://code.google.com/p/goocalendar/)
