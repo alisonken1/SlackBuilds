@@ -70,7 +70,7 @@ python setup.py install --root=$PKG
 
 mkdir -p $PKG/etc/{rc.d,trytond}
 cp -f $CWD/rc.trytond $PKG/etc/rc.d/rc.trytond.new
-cp -f $CWD/trytond.conf $PKG/etc/trytond/trytond.conf.new
+cp -f $CWD/etc/trytond.conf $PKG/etc/trytond/trytond.conf.new
 
 mkdir -p $PKG/var/{spool,log}/trytond
 
