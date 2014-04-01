@@ -70,17 +70,12 @@ python setup.py install --root=$PKG
 
 mkdir -p $PKG/etc/{rc.d,trytond}
 cp -f $CWD/rc.trytond $PKG/etc/rc.d/rc.trytond.new
-cp -f $CWD/trytond.conf $PKG/etc/trytond/trytond.conf.new
+cp -f $TMP/$PRGNAM-$VERSION/etc/trytond.conf $PKG/etc/trytond/trytond.conf.new
 
 mkdir -p $PKG/var/{spool,log}/trytond
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
-
-( cd $PKG/usr/man
-  find . -type f -exec gzip -9 {} \;
-  for i in $( find . -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
-)
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
@@ -89,17 +84,23 @@ mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
-# Make documentation
-cd doc
-make html
-make pickle
-make json
-make htmlhelp
-make qthelp
-PAPER=letter make latex
-make linkcheck
-cd _build
-mv ./ $PKG/usr/doc/$PRGNAM-$VERSION/
+# Don't fail if sphinx not installed
+if [ -x /usr/bin/sphinx-build ] ; then
+    (   cd $TMP/$PRGNAM-$VERSION/doc
+        make html
+        make pickle
+        make json
+        make htmlhelp
+        make qthelp
+        PAPER=letter make latex
+        make linkcheck
+        cd _build
+        mv ./ $PKG/usr/doc/$PRGNAM-$VERSION/
+    )
+else
+    echo "Sphinx documenting program not found"
+    echo "Skipping document building"
+fi
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
