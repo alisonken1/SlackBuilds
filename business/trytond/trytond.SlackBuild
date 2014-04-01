@@ -89,5 +89,17 @@ mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
+# Make documentation
+cd doc
+make html
+make pickle
+make json
+make htmlhelp
+make qthelp
+PAPER=letter make latex
+make linkcheck
+cd _build
+mv ./ $PKG/usr/doc/$PRGNAM-$VERSION/
+
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
