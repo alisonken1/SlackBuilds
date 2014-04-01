@@ -4,7 +4,7 @@ POS, etc. Technical features include a distributed server, flexible workflows,
 an object database, a dynamic GUI, customizable reports, and SOAP and XML-RPC
 interfaces.
 
-Requires polib, and relatio
+Requires polib, and relatio. To add modules, you will need pip.
 
 Before you can use the tryton server, you will have to set up postgresql. All
 you have to do is issue the following command:
@@ -16,10 +16,17 @@ postgresql on a different server, you will have to run createuser like this:
   createuser -U postgres --createdb --no-adduser -P tryton
 
 After initializing postgres, modify /etc/trytond/trytond.conf to match your
-local setup, then run
-    /usr/bin/trytond -c /etc/trytond/trytond.conf -i all
-
-After trytond is setup, then you can run /etc/rc.d/rc.trytond start
+local setup. After trytond is setup, then you can run /etc/rc.d/rc.trytond start
 
 If you want to install the documentation, optional dependency is Sphinx
 documentation program (development/sphinx).
+
+For a list of modules that can be added to trytond, at cli type:
+    pip search trytond
+
+then to add module, type:
+    pip install trytond_module_name
+
+where trydond_module_name is the name of the module. For example, to add
+the account package, type:
+    pip install trytond_account
