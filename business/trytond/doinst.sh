@@ -19,5 +19,5 @@ if [ -e etc/rc.d/rc.trytond ]; then
 fi
 
 config etc/rc.d/rc.trytond.new
-config etc/openerp/trytond.conf.new
+config etc/trytond/trytond.conf.new
 

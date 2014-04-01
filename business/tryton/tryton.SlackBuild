@@ -87,9 +87,7 @@ if [ -x /usr/bin/sphinx ] ; then
         make htmlhelp
         make qthelp
         PAPER=letter make latex
-        make linkcheck
-        cd _build
-        mv ./ $PKG/usr/doc/$PRGNAM-$VERSION/
+        mv ./_build/* $PKG/usr/doc/$PRGNAM-$VERSION/
     )
 else
     echo "Sphinx documenation program not found"
