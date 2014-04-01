@@ -8,3 +8,6 @@ This is the gtk client for Tryton.
 
 If you want to integrate Google Calendar, then install
 GooCalendar (http://code.google.com/p/goocalendar/)
+
+If you want to install the documentation, optional dependency is Sphinx
+documentation program (development/sphinx).

@@ -18,3 +18,6 @@ local setup, then run
     /usr/bin/trytond -c /etc/trytond/trytond.conf -i all
 
 After trytond is setup, then you can run /etc/rc.d/rc.trytond start
+
+If you want to install the documentation, optional dependency is Sphinx
+documentation program (development/sphinx).
