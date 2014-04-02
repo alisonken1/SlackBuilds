@@ -1,6 +1,6 @@
 PRGNAM="trytond"
 VERSION="3.0.3"
-HOMEPAGE="http://www.tryton.com"
+HOMEPAGE="http://www.tryton.org"
 DOWNLOAD="http://downloads.tryton.org/3.0/trytond-3.0.3.tar.gz"
 MD5SUM="f04432b92fb8fc21438fdffcbeecb256"
 DOWNLOAD_x86_64=""
