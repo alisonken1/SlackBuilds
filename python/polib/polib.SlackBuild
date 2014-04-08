@@ -1,7 +1,5 @@
-#!/bin/sh -x
-
-# Slackware build script for Tryton ERP server
-
+#!/bin/sh
+#
 # Copyright 2014, Ken Roberts, California, USA
 # All rights reserved.
 #
