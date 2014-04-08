@@ -19,7 +19,7 @@ After initializing postgres, modify /etc/trytond/trytond.conf to match your
 local setup. After trytond is setup, then you can run /etc/rc.d/rc.trytond start
 
 If you want to install the documentation, optional dependency is Sphinx
-documentation program (development/sphinx).
+documentation program (development/Sphinx).
 
 For a list of modules that can be added to trytond, at cli type:
     pip search trytond
