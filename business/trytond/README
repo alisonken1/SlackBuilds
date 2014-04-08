@@ -16,7 +16,8 @@ postgresql on a different server, you will have to run createuser like this:
   createuser -U postgres --createdb --no-adduser -P tryton
 
 After initializing postgres, modify /etc/trytond/trytond.conf to match your
-local setup. After trytond is setup, then you can run /etc/rc.d/rc.trytond start
+local setup. After trytond is setup, then you can run
+    /etc/rc.d/rc.trytond start
 
 If you want to install the documentation, optional dependency is Sphinx
 documentation program (development/Sphinx).

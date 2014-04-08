@@ -5,13 +5,15 @@
 # You must make exactly 11 lines for the formatting to be correct.  It's also
 # customary to leave one space after the ':' except on otherwise blank lines.
 
-         |-----handy-ruler------------------------------------------------------|
+       |-----handy-ruler------------------------------------------------------|
 trytond: trytond (ERP -server part)
 trytond:
 trytond: Tryton is a complete ERP written in Python.
-trytond:
 trytond: This package is for the server only - the modules needed for actual
 trytond: usage must be installed separately.
 trytond:
 trytond: Homepage: http://www.tryton.org
+trytond:
+trytond: Requires: lxml polib psycopg2 pydot python-dateutil pytz relatorio
+trytond:            simplejson sql
 trytond:
